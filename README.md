@@ -1,1 +1,8 @@
-# ng2.users.random
+## Установка
+
+```
+npm install
+```
+```
+npm run go
+```
