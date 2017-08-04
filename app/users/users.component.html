@@ -22,7 +22,20 @@
             <span (click)="selectedUser = null" class="close">&times;</span>
         </div>
         <div class="users-modal-body">
-            <p>{{selectedUser.name.title}}. {{selectedUser.name.first}} {{selectedUser.name.last}}</p>
+            <div class="media">
+                <img class="d-flex mr-3" src="{{selectedUser.picture.large}}" alt="{{selectedUser.name.title}}. {{selectedUser.name.first}} {{selectedUser.name.last}}">
+                <div class="media-body">
+                    <h5 class="mt-0 name">{{selectedUser.name.title}}. {{selectedUser.name.first}} {{selectedUser.name.last}}</h5>
+                    <ul>
+                        <li><b>Street:</b> {{selectedUser.location.street}}</li>
+                        <li><b>City:</b> {{selectedUser.location.city}}</li>
+                        <li><b>State:</b> {{selectedUser.location.state}}</li>
+                        <li><b>Email:</b> {{selectedUser.email}}</li>
+                        <li><b>Phone:</b> {{selectedUser.phone}}</li>
+                        <li><b>Gender:</b> {{selectedUser.gender}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div (click)="selectedUser = null" class="bg"></div>

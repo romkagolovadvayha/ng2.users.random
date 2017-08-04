@@ -21,5 +21,6 @@ export class UsersListComponent {
     }
     onSelect(user: Object) {
         this.selectedUser = user;
+        console.log(user);
     }
 }

@@ -1,3 +1,9 @@
+/* App */
+h1 {
+    margin-top: 20px;
+    display: block;
+}
+/* Users Card */
 .users-card {
     margin-bottom: 20px;
     padding: 10px;
@@ -20,6 +26,7 @@
 .users-card:hover > img {
     border-color: #fff;
 }
+/* Users Modal */
 .users-modal {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -36,20 +43,32 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.4);
 }
-/* Modal Header */
 .users-modal-header {
-    padding: 2px 16px;
+    padding: 10px 16px;
     background-color: #f1f1f1;
     color: white;
 }
 
 .users-modal-header h2 {
     display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    color: #000;
 }
-.users-modal-body {padding: 2px 16px;}
+.users-modal-header .close {
+    line-height: 18px;
+}
+.users-modal-body {
+    padding: 20px 16px;
+}
+.users-modal-body img {
+    border: 1px solid #000;
+}
+.users-modal-body ul {
+    padding-left: 20px;
+}
 
 .users-modal-content {
     position: relative;
@@ -59,16 +78,17 @@
     margin-top: 40px;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 500px;
+    max-width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.users-modal-content .close {
-    margin-top: 7px;
+.users-modal-body .name {
+    text-transform: capitalize;
 }
+/* Filter */
 .users-filter {
     margin: 20px 0;
-    display: block;
-}
-h1 {
     display: block;
 }

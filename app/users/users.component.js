@@ -23,6 +23,7 @@ let UsersListComponent = class UsersListComponent {
     }
     onSelect(user) {
         this.selectedUser = user;
+        console.log(user);
     }
 };
 UsersListComponent = __decorate([
