@@ -14,14 +14,15 @@ const http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 let UsersListComponent = class UsersListComponent {
     constructor(http) {
+        this.selectElements = [{ name: 'A-Z', sort: 'A' }, { name: 'Z-A', sort: 'Z' }];
         this.UsersList = [];
-        http.get('https://api.randomuser.me/1.0/?results=10&nat=gb,us&inc=gender,name,location,email,phone,picture')
+        http.get('https://api.randomuser.me/1.0/?results=50&nat=gb,us&inc=gender,name,location,email,phone,picture')
             .map(res => res.json())
             .subscribe(users => this.UsersList = users.results);
+        this.selectElement = this.selectElements[0];
     }
     onSelect(user) {
         this.selectedUser = user;
-        console.log(this.UsersList);
     }
 };
 UsersListComponent = __decorate([

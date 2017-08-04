@@ -1,7 +1,13 @@
- <div *ngIf="UsersList?.length">
-    <h1>Users</h1>
+  <div *ngIf="UsersList?.length">
+        <h1>Users</h1>
+        <div class="users-filter">
+            <label>Sort: </label>
+            <select class="custom-select" [(ngModel)]="selectElement">
+                <option *ngFor="let selectElement of selectElements" [ngValue]="selectElement">{{selectElement.name}}</option>
+            </select>
+        </div>
     <div class="row">
-        <div class="users-card col-md-2" *ngFor="let user of UsersList" (click)="onSelect(user)">
+        <div class="users-card col-sm-3 col-lg-2" *ngFor="let user of UsersList | orderByPipe: selectElement.sort" (click)="onSelect(user)">
             <img src="{{user.picture.medium}}" alt="{{user.name.title}}. {{user.name.first}} {{user.name.last}}">
             <span>{{user.name.title}}. {{user.name.first}} {{user.name.last}}</span>
         </div>

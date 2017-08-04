@@ -65,3 +65,10 @@
 .users-modal-content .close {
     margin-top: 7px;
 }
+.users-filter {
+    margin: 20px 0;
+    display: block;
+}
+h1 {
+    display: block;
+}
