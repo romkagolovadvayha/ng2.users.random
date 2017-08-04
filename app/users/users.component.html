@@ -1,23 +1,12 @@
  <div *ngIf="UsersList?.length">
     <h1>Users</h1>
-    <ul class="list-unstyled users-card">
-        <li class="media" *ngFor="let user of UsersList" 
+    <div class="row">
+        <div class="users-card col-md-2" *ngFor="let user of UsersList" 
             (click)="onSelect(user)">
-            <img class="d-flex mr-3" src="{{user.picture.medium}}" alt="Generic placeholder image">
-            <div class="media-body">
-                <h5 class="mt-0 mb-1">{{user.name.title}}. {{user.name.first}} {{user.name.last}}</h5>
-            </div>
-        </li>
-    </ul>
-    <!-- <ul class="list">
-        <li *ngFor="let user of UsersList" 
-            (click)="onSelect(user)">
-            <p *ngIf="user.name">
-                
-                {{user.name.title}}. {{user.name.first}} {{user.name.last}}
-            </p>
-        </li>
-    </ul> -->
+            <img src="{{user.picture.medium}}" alt="Generic placeholder image">
+            <span>{{user.name.title}}. {{user.name.first}} {{user.name.last}}</span>
+        </div>
+    </div>
 </div>
 <div *ngIf="!UsersList?.length">Loadding...</div> 
 
