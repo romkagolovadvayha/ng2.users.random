@@ -7,30 +7,30 @@ export class OrderByPipe implements PipeTransform{
 
  transform(array: Array<string>, args: string): Array<string> {
 
-  if(!array || array === undefined || array.length === 0) return null;
+	if(!array || array === undefined || array.length === 0) return null;
 
-    array.sort((a: any, b: any) => {
-        let a_ = a.name.title + '. ' + a.name.first + ' ' + a.name.last;
-        let b_ = b.name.title + '. ' + b.name.first + ' ' + b.name.last;
-      if (args == 'A') {
-        if (a_ < b_) {
-          return -1;
-        } else if (a_ > b_) {
-          return 1;
-        } else {
-          return 0;
-        }
-      } else {
-        if (a_ > b_) {
-          return -1;
-        } else if (a_ < b_) {
-          return 1;
-        } else {
-          return 0;
-        }  
-      }
-    });
-    return array;
-  }
+		array.sort((a: any, b: any) => {
+				let a_ = a.name.title + '. ' + a.name.first + ' ' + a.name.last;
+				let b_ = b.name.title + '. ' + b.name.first + ' ' + b.name.last;
+			if (args == 'A') {
+				if (a_ < b_) {
+					return -1;
+				} else if (a_ > b_) {
+					return 1;
+				} else {
+					return 0;
+				}
+			} else {
+				if (a_ > b_) {
+					return -1;
+				} else if (a_ < b_) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+		});
+		return array;
+	}
 
 }
